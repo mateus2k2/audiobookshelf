@@ -12,11 +12,12 @@
 		}
 	},
 	"runArgs": [
-		"--name", "audiobookshelf_devcontainer",
+		"--name", "audiobookshelf_devcontainer"
 	],
 	"mounts": [
 		"source=abs-server-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
-		"source=abs-client-node_modules,target=${containerWorkspaceFolder}/client/node_modules,type=volume"
+		"source=abs-client-node_modules,target=${containerWorkspaceFolder}/client/node_modules,type=volume",
+		"source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached,readonly"
 	],
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
