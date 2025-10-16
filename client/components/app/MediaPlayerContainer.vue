@@ -514,6 +514,14 @@ export default {
         console.error('Failed to fetch full item', error)
         return null
       })
+
+      let segments = []
+      if (libraryItem.mediaType === 'podcast') {
+        segments = await this.$axios.$get(`/api/items/${libraryItemId}/segments/`, payload).catch((error) => {
+          console.error('Failed to fetch item segments', error)
+        })
+      }
+
       if (!libraryItem) return
 
       this.$store.commit('setMediaPlaying', {
@@ -528,7 +536,8 @@ export default {
         if (this.$refs.audioPlayer) this.$refs.audioPlayer.checkUpdateChapterTrack()
       })
 
-      this.playerHandler.load(libraryItem, episodeId, true, this.currentPlaybackRate, payload.startTime)
+      // libraryItem, episodeId, playWhenReady, playbackRate, startTimeOverride = undefined, segments = null
+      this.playerHandler.load({ libraryItem: libraryItem, episodeId: episodeId, playWhenReady: true, playbackRate: this.currentPlaybackRate, startTimeOverride: payload.startTime, segments: segments })
     },
     pauseItem() {
       this.playerHandler.pause()

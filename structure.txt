@@ -1,0 +1,1146 @@
+.
+├── build
+│   ├── debian
+│   │   ├── DEBIAN
+│   │   │   ├── control
+│   │   │   ├── postinst
+│   │   │   ├── preinst
+│   │   │   └── prerm
+│   │   ├── etc
+│   │   │   └── default
+│   │   ├── lib
+│   │   │   └── systemd
+│   │   │       └── system
+│   │   │           └── audiobookshelf.service
+│   │   └── usr
+│   │       ├── lib
+│   │       └── share
+│   └── linuxpackager
+├── client
+│   ├── assets
+│   │   ├── absicons.css
+│   │   ├── app.css
+│   │   ├── defaultStyles.css
+│   │   ├── draggable.css
+│   │   ├── ebooks
+│   │   │   ├── basic.js
+│   │   │   ├── htmlParser.js
+│   │   │   └── mobi.js
+│   │   ├── fonts.css
+│   │   ├── tailwind.css
+│   │   ├── transitions.css
+│   │   └── trix.css
+│   ├── components
+│   │   ├── app
+│   │   │   ├── Appbar.vue
+│   │   │   ├── BookShelfCategorized.vue
+│   │   │   ├── BookShelfRow.vue
+│   │   │   ├── BookShelfToolbar.vue
+│   │   │   ├── ConfigSideNav.vue
+│   │   │   ├── LazyBookshelf.vue
+│   │   │   ├── MediaPlayerContainer.vue
+│   │   │   ├── SettingsContent.vue
+│   │   │   └── SideRail.vue
+│   │   ├── cards
+│   │   │   ├── AuthorCard.vue
+│   │   │   ├── AuthorSearchCard.vue
+│   │   │   ├── BookMatchCard.vue
+│   │   │   ├── EpisodeSearchCard.vue
+│   │   │   ├── GenreSearchCard.vue
+│   │   │   ├── GroupCard.vue
+│   │   │   ├── ItemSearchCard.vue
+│   │   │   ├── ItemTaskRunningCard.vue
+│   │   │   ├── ItemUploadCard.vue
+│   │   │   ├── LazyBookCard.vue
+│   │   │   ├── LazyCollectionCard.vue
+│   │   │   ├── LazyPlaylistCard.vue
+│   │   │   ├── LazySeriesCard.vue
+│   │   │   ├── NarratorCard.vue
+│   │   │   ├── NarratorSearchCard.vue
+│   │   │   ├── NotificationCard.vue
+│   │   │   ├── PodcastFeedSummaryCard.vue
+│   │   │   ├── SeriesSearchCard.vue
+│   │   │   └── TagSearchCard.vue
+│   │   ├── content
+│   │   │   └── LibraryItemDetails.vue
+│   │   ├── controls
+│   │   │   ├── FilterSelect.vue
+│   │   │   ├── GlobalSearch.vue
+│   │   │   ├── LibraryFilterSelect.vue
+│   │   │   ├── LibrarySortSelect.vue
+│   │   │   ├── PlaybackSpeedControl.vue
+│   │   │   ├── SortSelect.vue
+│   │   │   └── VolumeControl.vue
+│   │   ├── covers
+│   │   │   ├── AuthorImage.vue
+│   │   │   ├── BookCover.vue
+│   │   │   ├── CollectionCover.vue
+│   │   │   ├── GroupCover.vue
+│   │   │   ├── PlaylistCover.vue
+│   │   │   └── PreviewCover.vue
+│   │   ├── modals
+│   │   │   ├── AccountModal.vue
+│   │   │   ├── AddCustomMetadataProviderModal.vue
+│   │   │   ├── ApiKeyCreatedModal.vue
+│   │   │   ├── ApiKeyModal.vue
+│   │   │   ├── AudioFileDataModal.vue
+│   │   │   ├── authors
+│   │   │   │   └── EditModal.vue
+│   │   │   ├── BackupScheduleModal.vue
+│   │   │   ├── BatchQuickMatchModel.vue
+│   │   │   ├── bookmarks
+│   │   │   │   └── BookmarkItem.vue
+│   │   │   ├── BookmarksModal.vue
+│   │   │   ├── changelog
+│   │   │   │   └── ViewModal.vue
+│   │   │   ├── ChaptersModal.vue
+│   │   │   ├── collections
+│   │   │   │   ├── AddCreateModal.vue
+│   │   │   │   ├── CollectionItem.vue
+│   │   │   │   └── EditModal.vue
+│   │   │   ├── Dialog.vue
+│   │   │   ├── EditSeriesInputInnerModal.vue
+│   │   │   ├── emails
+│   │   │   │   ├── EReaderDeviceModal.vue
+│   │   │   │   └── UserEReaderDeviceModal.vue
+│   │   │   ├── item
+│   │   │   │   ├── EditModal.vue
+│   │   │   │   └── tabs
+│   │   │   │       ├── Chapters.vue
+│   │   │   │       ├── Cover.vue
+│   │   │   │       ├── Details.vue
+│   │   │   │       ├── Episodes.vue
+│   │   │   │       ├── Files.vue
+│   │   │   │       ├── Match.vue
+│   │   │   │       ├── Schedule.vue
+│   │   │   │       └── Tools.vue
+│   │   │   ├── libraries
+│   │   │   │   ├── EditLibrary.vue
+│   │   │   │   ├── EditModal.vue
+│   │   │   │   ├── LazyFolderChooser.vue
+│   │   │   │   ├── LibraryScannerSettings.vue
+│   │   │   │   ├── LibrarySettings.vue
+│   │   │   │   ├── LibraryTools.vue
+│   │   │   │   └── ScheduleScan.vue
+│   │   │   ├── ListeningSessionModal.vue
+│   │   │   ├── Modal.vue
+│   │   │   ├── notification
+│   │   │   │   └── NotificationEditModal.vue
+│   │   │   ├── player
+│   │   │   │   ├── QueueItemRow.vue
+│   │   │   │   └── QueueItemsModal.vue
+│   │   │   ├── PlayerSettingsModal.vue
+│   │   │   ├── playlists
+│   │   │   │   ├── AddCreateModal.vue
+│   │   │   │   ├── EditModal.vue
+│   │   │   │   └── UserPlaylistItem.vue
+│   │   │   ├── podcast
+│   │   │   │   ├── EditEpisode.vue
+│   │   │   │   ├── EpisodeFeed.vue
+│   │   │   │   ├── NewModal.vue
+│   │   │   │   ├── OpmlFeedsModal.vue
+│   │   │   │   ├── RemoveEpisode.vue
+│   │   │   │   ├── tabs
+│   │   │   │   │   ├── EpisodeDetails.vue
+│   │   │   │   │   └── EpisodeMatch.vue
+│   │   │   │   └── ViewEpisode.vue
+│   │   │   ├── RawCoverPreviewModal.vue
+│   │   │   ├── rssfeed
+│   │   │   │   ├── OpenCloseModal.vue
+│   │   │   │   └── ViewFeedModal.vue
+│   │   │   ├── ShareModal.vue
+│   │   │   ├── SleepTimerModal.vue
+│   │   │   └── UploadImageModal.vue
+│   │   ├── player
+│   │   │   ├── PlayerPlaybackControls.vue
+│   │   │   ├── PlayerTrackBar.vue
+│   │   │   └── PlayerUi.vue
+│   │   ├── prompt
+│   │   │   ├── Confirm.vue
+│   │   │   └── Dialog.vue
+│   │   ├── readers
+│   │   │   ├── ComicReader.vue
+│   │   │   ├── EpubReader.vue
+│   │   │   ├── MobiReader.vue
+│   │   │   ├── PdfReader.vue
+│   │   │   └── Reader.vue
+│   │   ├── stats
+│   │   │   ├── DailyListeningChart.vue
+│   │   │   ├── Heatmap.vue
+│   │   │   ├── PreviewIcons.vue
+│   │   │   ├── YearInReviewBanner.vue
+│   │   │   ├── YearInReviewServer.vue
+│   │   │   ├── YearInReviewShort.vue
+│   │   │   └── YearInReview.vue
+│   │   ├── tables
+│   │   │   ├── ApiKeysTable.vue
+│   │   │   ├── AudioTracksTableRow.vue
+│   │   │   ├── BackupsTable.vue
+│   │   │   ├── ChaptersTable.vue
+│   │   │   ├── collection
+│   │   │   │   └── BookTableRow.vue
+│   │   │   ├── CollectionBooksTable.vue
+│   │   │   ├── CustomMetadataProviderTable.vue
+│   │   │   ├── EbookFilesTableRow.vue
+│   │   │   ├── EbookFilesTable.vue
+│   │   │   ├── library
+│   │   │   │   ├── LibrariesTable.vue
+│   │   │   │   └── LibraryItem.vue
+│   │   │   ├── LibraryFilesTableRow.vue
+│   │   │   ├── LibraryFilesTable.vue
+│   │   │   ├── playlist
+│   │   │   │   └── ItemTableRow.vue
+│   │   │   ├── PlaylistItemsTable.vue
+│   │   │   ├── podcast
+│   │   │   │   ├── DownloadQueueTable.vue
+│   │   │   │   ├── LazyEpisodeRow.vue
+│   │   │   │   └── LazyEpisodesTable.vue
+│   │   │   ├── TracksTable.vue
+│   │   │   ├── UploadedFilesTable.vue
+│   │   │   └── UsersTable.vue
+│   │   ├── ui
+│   │   │   ├── Btn.vue
+│   │   │   ├── Checkbox.vue
+│   │   │   ├── ContextMenuDropdown.vue
+│   │   │   ├── Dropdown.vue
+│   │   │   ├── EditableText.vue
+│   │   │   ├── FileInput.vue
+│   │   │   ├── IconBtn.vue
+│   │   │   ├── InputDropdown.vue
+│   │   │   ├── LibrariesDropdown.vue
+│   │   │   ├── LibraryIcon.vue
+│   │   │   ├── LoadingIndicator.vue
+│   │   │   ├── MediaIconPicker.vue
+│   │   │   ├── MultiSelectDropdown.vue
+│   │   │   ├── MultiSelectQueryInput.vue
+│   │   │   ├── MultiSelect.vue
+│   │   │   ├── QueryInput.vue
+│   │   │   ├── RangeInput.vue
+│   │   │   ├── ReadIconBtn.vue
+│   │   │   ├── RichTextEditor.vue
+│   │   │   ├── SelectInput.vue
+│   │   │   ├── TextareaInput.vue
+│   │   │   ├── TextareaWithLabel.vue
+│   │   │   ├── TextInput.vue
+│   │   │   ├── TextInputWithLabel.vue
+│   │   │   ├── TimePicker.vue
+│   │   │   ├── ToggleBtns.vue
+│   │   │   ├── ToggleSwitch.vue
+│   │   │   ├── Tooltip.vue
+│   │   │   └── VueTrix.vue
+│   │   └── widgets
+│   │       ├── AbridgedIndicator.vue
+│   │       ├── Alert.vue
+│   │       ├── AlreadyInLibraryIndicator.vue
+│   │       ├── BookDetailsEdit.vue
+│   │       ├── CoverSizeWidget.vue
+│   │       ├── CronExpressionBuilder.vue
+│   │       ├── EncoderOptionsCard.vue
+│   │       ├── ExplicitIndicator.vue
+│   │       ├── ItemSlider.vue
+│   │       ├── LoadingSpinner.vue
+│   │       ├── MoreMenu.vue
+│   │       ├── NotificationWidget.vue
+│   │       ├── OnlineIndicator.vue
+│   │       ├── PodcastDetailsEdit.vue
+│   │       ├── PodcastTypeIndicator.vue
+│   │       ├── RssFeedMetadataBuilder.vue
+│   │       └── SeriesInputWidget.vue
+│   ├── cypress
+│   │   ├── fixtures
+│   │   │   └── images
+│   │   │       ├── book_placeholder.jpg
+│   │   │       ├── cover1.jpg
+│   │   │       └── cover2.jpg
+│   │   ├── support
+│   │   │   ├── commands.js
+│   │   │   ├── component-index.html
+│   │   │   └── component.js
+│   │   └── tests
+│   │       ├── components
+│   │       │   └── cards
+│   │       │       ├── AuthorCard.cy.js
+│   │       │       ├── ItemSlider.cy.js
+│   │       │       ├── LazyBookCard.cy.js
+│   │       │       ├── LazySeriesCard.cy.js
+│   │       │       └── NarratorCard.cy.js
+│   │       └── utils
+│   │           └── ElapsedPrettyExtended.cy.js
+│   ├── cypress.config.js
+│   ├── layouts
+│   │   ├── blank.vue
+│   │   ├── default.vue
+│   │   └── error.vue
+│   ├── middleware
+│   │   └── authenticated.js
+│   ├── mixins
+│   │   ├── bookshelfCardsHelpers.js
+│   │   ├── menuKeyboardNavigation.js
+│   │   └── uploadHelpers.js
+│   ├── nuxt.config.js
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── pages
+│   │   ├── account.vue
+│   │   ├── audiobook
+│   │   │   └── _id
+│   │   │       ├── chapters.vue
+│   │   │       ├── edit.vue
+│   │   │       └── manage.vue
+│   │   ├── author
+│   │   │   └── _id.vue
+│   │   ├── batch
+│   │   │   └── index.vue
+│   │   ├── collection
+│   │   │   └── _id.vue
+│   │   ├── config
+│   │   │   ├── api-keys
+│   │   │   │   └── index.vue
+│   │   │   ├── authentication.vue
+│   │   │   ├── backups.vue
+│   │   │   ├── email.vue
+│   │   │   ├── index.vue
+│   │   │   ├── item-metadata-utils
+│   │   │   │   ├── custom-metadata-providers.vue
+│   │   │   │   ├── genres.vue
+│   │   │   │   ├── index.vue
+│   │   │   │   └── tags.vue
+│   │   │   ├── libraries.vue
+│   │   │   ├── log.vue
+│   │   │   ├── notifications.vue
+│   │   │   ├── rss-feeds.vue
+│   │   │   ├── sessions.vue
+│   │   │   ├── stats.vue
+│   │   │   └── users
+│   │   │       ├── _id
+│   │   │       │   ├── index.vue
+│   │   │       │   └── sessions.vue
+│   │   │       └── index.vue
+│   │   ├── config.vue
+│   │   ├── index.vue
+│   │   ├── item
+│   │   │   └── _id
+│   │   │       └── index.vue
+│   │   ├── library
+│   │   │   └── _library
+│   │   │       ├── bookshelf
+│   │   │       │   └── _id.vue
+│   │   │       ├── index.vue
+│   │   │       ├── narrators.vue
+│   │   │       ├── podcast
+│   │   │       │   ├── download-queue.vue
+│   │   │       │   ├── latest.vue
+│   │   │       │   └── search.vue
+│   │   │       ├── search.vue
+│   │   │       ├── series
+│   │   │       │   └── _id.vue
+│   │   │       └── stats.vue
+│   │   ├── login.vue
+│   │   ├── oops.vue
+│   │   ├── playlist
+│   │   │   └── _id.vue
+│   │   ├── share
+│   │   │   └── _slug.vue
+│   │   └── upload
+│   │       └── index.vue
+│   ├── players
+│   │   ├── AudioTrack.js
+│   │   ├── CastPlayer.js
+│   │   ├── castUtils.js
+│   │   ├── LocalAudioPlayer.js
+│   │   └── PlayerHandler.js
+│   ├── plugins
+│   │   ├── axios.js
+│   │   ├── chromecast.js
+│   │   ├── constants.js
+│   │   ├── i18n.js
+│   │   ├── init.client.js
+│   │   ├── toast.js
+│   │   ├── utils.js
+│   │   └── version.js
+│   ├── postcss.config.js
+│   ├── static
+│   │   ├── book_placeholder.jpg
+│   │   ├── favicon.ico
+│   │   ├── fonts
+│   │   │   ├── absicons
+│   │   │   │   ├── absicons.eot
+│   │   │   │   ├── absicons.svg
+│   │   │   │   ├── absicons.ttf
+│   │   │   │   └── absicons.woff
+│   │   │   ├── MaterialSymbolsRounded.woff2
+│   │   │   ├── Source_Sans_Pro
+│   │   │   │   ├── OFL.txt
+│   │   │   │   ├── SourceSansPro-Light.ttf
+│   │   │   │   ├── SourceSansPro-Regular.ttf
+│   │   │   │   └── SourceSansPro-SemiBold.ttf
+│   │   │   └── Ubuntu_Mono
+│   │   │       ├── UbuntuMono-Regular.ttf
+│   │   │       └── UFL.txt
+│   │   ├── icon192.png
+│   │   ├── icon48.png
+│   │   ├── icon64.png
+│   │   ├── icon.svg
+│   │   ├── ios_icon.png
+│   │   ├── libarchive
+│   │   │   ├── wasm-gen
+│   │   │   │   ├── libarchive.js
+│   │   │   │   └── libarchive.wasm
+│   │   │   └── worker-bundle.js
+│   │   ├── libs
+│   │   │   └── marked
+│   │   │       ├── index.js
+│   │   │       └── LICENSE
+│   │   ├── Logo.png
+│   │   ├── robots.txt
+│   │   ├── sw.js
+│   │   └── textures
+│   │       └── wood_default.jpg
+│   ├── store
+│   │   ├── globals.js
+│   │   ├── index.js
+│   │   ├── libraries.js
+│   │   ├── scanners.js
+│   │   ├── tasks.js
+│   │   ├── user.js
+│   │   └── users.js
+│   └── strings
+│       ├── ar.json
+│       ├── be.json
+│       ├── bg.json
+│       ├── bn.json
+│       ├── ca.json
+│       ├── cs.json
+│       ├── da.json
+│       ├── de.json
+│       ├── en-us.json
+│       ├── es.json
+│       ├── et.json
+│       ├── eu.json
+│       ├── fa.json
+│       ├── fi.json
+│       ├── fr.json
+│       ├── gu.json
+│       ├── he.json
+│       ├── hi.json
+│       ├── hr.json
+│       ├── hu.json
+│       ├── it.json
+│       ├── ja.json
+│       ├── lt.json
+│       ├── nl.json
+│       ├── no.json
+│       ├── pl.json
+│       ├── pt-br.json
+│       ├── ro.json
+│       ├── ru.json
+│       ├── sk.json
+│       ├── sl.json
+│       ├── sv.json
+│       ├── tr.json
+│       ├── uk.json
+│       ├── vi-vn.json
+│       ├── zh-cn.json
+│       └── zh-tw.json
+├── config
+│   ├── absdatabase.sqlite
+│   └── migrations
+│       ├── v2.15.0-series-column-unique.js
+│       ├── v2.15.1-reindex-nocase.js
+│       ├── v2.15.2-index-creation.js
+│       ├── v2.17.0-uuid-replacement.js
+│       ├── v2.17.3-fk-constraints.js
+│       ├── v2.17.4-use-subfolder-for-oidc-redirect-uris.js
+│       ├── v2.17.5-remove-host-from-feed-urls.js
+│       ├── v2.17.6-share-add-isdownloadable.js
+│       ├── v2.17.7-add-indices.js
+│       ├── v2.19.1-copy-title-to-library-items.js
+│       ├── v2.19.4-improve-podcast-queries.js
+│       ├── v2.20.0-improve-author-sort-queries.js
+│       └── v2.26.0-create-auth-tables.js
+├── custom-metadata-provider-specification.yaml
+├── data
+│   └── NerdCast
+│       └── NerdCast 1001 - NerdCast Mil no Teatro - Melhores Momentos.mp3
+├── dev.js
+├── docker-compose.yml
+├── Dockerfile
+├── docker-template.xml
+├── docs
+│   ├── controllers
+│   │   ├── AuthorController.yaml
+│   │   ├── EmailController.yaml
+│   │   ├── LibraryController.yaml
+│   │   ├── NotificationController.yaml
+│   │   ├── PodcastController.yaml
+│   │   └── SeriesController.yaml
+│   ├── objects
+│   │   ├── entities
+│   │   │   ├── Author.yaml
+│   │   │   ├── PodcastEpisode.yaml
+│   │   │   └── Series.yaml
+│   │   ├── files
+│   │   │   ├── AudioFile.yaml
+│   │   │   ├── AudioTrack.yaml
+│   │   │   └── EBookFile.yaml
+│   │   ├── Folder.yaml
+│   │   ├── LibraryItem.yaml
+│   │   ├── Library.yaml
+│   │   ├── mediaTypes
+│   │   │   ├── Book.yaml
+│   │   │   ├── media.yaml
+│   │   │   └── Podcast.yaml
+│   │   ├── metadata
+│   │   │   ├── AudioMetaTags.yaml
+│   │   │   ├── BookMetadata.yaml
+│   │   │   ├── FileMetadata.yaml
+│   │   │   └── PodcastMetadata.yaml
+│   │   ├── Notification.yaml
+│   │   └── settings
+│   │       └── EmailSettings.yaml
+│   ├── openapi.json
+│   ├── README.md
+│   ├── root.yaml
+│   └── schemas.yaml
+├── ffmpeg
+├── ffprobe
+├── images
+│   ├── banner.svg
+│   ├── DemoLibrary.png
+│   └── LibraryStreamSquare.png
+├── index.js
+├── libnusqlite3.so
+├── libnusqlite3.so.ver
+├── LICENSE
+├── metadata
+│   ├── backups
+│   ├── cache
+│   │   ├── covers
+│   │   │   └── 09fcc67e-72d7-4659-97a9-8116d99d0884_400.webp
+│   │   ├── images
+│   │   └── items
+│   ├── items
+│   │   └── 09fcc67e-72d7-4659-97a9-8116d99d0884
+│   │       └── cover.jpg
+│   ├── logs
+│   │   ├── crash_logs.txt
+│   │   ├── daily
+│   │   │   ├── 2025-10-14.txt
+│   │   │   └── 2025-10-15.txt
+│   │   └── scans
+│   └── streams
+├── package.json
+├── package-lock.json
+├── prod.js
+├── readme.md
+├── server
+│   ├── auth
+│   │   ├── LocalAuthStrategy.js
+│   │   ├── OidcAuthStrategy.js
+│   │   └── TokenManager.js
+│   ├── Auth.js
+│   ├── controllers
+│   │   ├── ApiKeyController.js
+│   │   ├── AuthorController.js
+│   │   ├── BackupController.js
+│   │   ├── CacheController.js
+│   │   ├── CollectionController.js
+│   │   ├── CustomMetadataProviderController.js
+│   │   ├── EmailController.js
+│   │   ├── FileSystemController.js
+│   │   ├── LibraryController.js
+│   │   ├── LibraryItemController.js
+│   │   ├── MeController.js
+│   │   ├── MiscController.js
+│   │   ├── NotificationController.js
+│   │   ├── PlaylistController.js
+│   │   ├── PodcastController.js
+│   │   ├── RSSFeedController.js
+│   │   ├── SearchController.js
+│   │   ├── SeriesController.js
+│   │   ├── SessionController.js
+│   │   ├── ShareController.js
+│   │   ├── StatsController.js
+│   │   ├── ToolsController.js
+│   │   └── UserController.js
+│   ├── Database.js
+│   ├── finders
+│   │   ├── AuthorFinder.js
+│   │   ├── BookFinder.js
+│   │   └── PodcastFinder.js
+│   ├── libs
+│   │   ├── archiver
+│   │   │   ├── archiverUtils
+│   │   │   │   ├── balancedMatch
+│   │   │   │   │   ├── index.js
+│   │   │   │   │   └── LICENSE
+│   │   │   │   ├── braceExpansion
+│   │   │   │   │   ├── index.js
+│   │   │   │   │   └── LICENSE
+│   │   │   │   ├── file.js
+│   │   │   │   ├── fsRealpath
+│   │   │   │   │   ├── index.js
+│   │   │   │   │   ├── LICENSE
+│   │   │   │   │   └── old.js
+│   │   │   │   ├── glob
+│   │   │   │   │   ├── common.js
+│   │   │   │   │   ├── index.js
+│   │   │   │   │   ├── LICENSE
+│   │   │   │   │   └── sync.js
+│   │   │   │   ├── index.js
+│   │   │   │   ├── inflight
+│   │   │   │   │   ├── index.js
+│   │   │   │   │   └── LICENSE
+│   │   │   │   ├── lazystream
+│   │   │   │   │   ├── index.js
+│   │   │   │   │   ├── LICENSE
+│   │   │   │   │   └── readable-stream
+│   │   │   │   │       ├── lib
+│   │   │   │   │       ├── passthrough.js
+│   │   │   │   │       └── readable.js
+│   │   │   │   ├── lodash.difference
+│   │   │   │   │   ├── index.js
+│   │   │   │   │   └── LICENSE
+│   │   │   │   ├── lodash.flatten
+│   │   │   │   │   ├── index.js
+│   │   │   │   │   └── LICENSE
+│   │   │   │   ├── lodash.isplainobject
+│   │   │   │   │   ├── index.js
+│   │   │   │   │   └── LICENSE
+│   │   │   │   ├── lodash.union
+│   │   │   │   │   ├── index.js
+│   │   │   │   │   └── LICENSE
+│   │   │   │   ├── minimatch
+│   │   │   │   │   ├── index.js
+│   │   │   │   │   └── LICENSE
+│   │   │   │   ├── readableStream
+│   │   │   │   │   ├── index.js
+│   │   │   │   │   ├── internal
+│   │   │   │   │   │   ├── streams
+│   │   │   │   │   │   └── validators.js
+│   │   │   │   │   ├── LICENSE
+│   │   │   │   │   ├── ours
+│   │   │   │   │   │   ├── browser.js
+│   │   │   │   │   │   ├── errors.js
+│   │   │   │   │   │   ├── primordials.js
+│   │   │   │   │   │   └── util.js
+│   │   │   │   │   ├── stream
+│   │   │   │   │   │   └── promises.js
+│   │   │   │   │   ├── _stream_duplex.js
+│   │   │   │   │   ├── stream.js
+│   │   │   │   │   ├── _stream_passthrough.js
+│   │   │   │   │   ├── _stream_readable.js
+│   │   │   │   │   ├── _stream_transform.js
+│   │   │   │   │   └── _stream_writable.js
+│   │   │   │   ├── safeBuffer
+│   │   │   │   │   ├── index.js
+│   │   │   │   │   └── LICENSE
+│   │   │   │   ├── stringDecoder
+│   │   │   │   │   ├── index.js
+│   │   │   │   │   └── LICENSE
+│   │   │   │   └── wrappy
+│   │   │   │       ├── index.js
+│   │   │   │       └── LICENSE
+│   │   │   ├── buffer-crc32
+│   │   │   │   ├── index.js
+│   │   │   │   └── LICENSE
+│   │   │   ├── compress-commons
+│   │   │   │   ├── archivers
+│   │   │   │   │   ├── archive-entry.js
+│   │   │   │   │   ├── archive-output-stream.js
+│   │   │   │   │   └── zip
+│   │   │   │   │       ├── constants.js
+│   │   │   │   │       ├── general-purpose-bit.js
+│   │   │   │   │       ├── unix-stat.js
+│   │   │   │   │       ├── util.js
+│   │   │   │   │       ├── zip-archive-entry.js
+│   │   │   │   │       └── zip-archive-output-stream.js
+│   │   │   │   ├── index.js
+│   │   │   │   ├── LICENSE
+│   │   │   │   └── util
+│   │   │   │       └── index.js
+│   │   │   ├── crc32
+│   │   │   │   ├── index.js
+│   │   │   │   └── LICENSE
+│   │   │   ├── crc32-stream
+│   │   │   │   ├── crc32-stream.js
+│   │   │   │   ├── deflate-crc32-stream.js
+│   │   │   │   ├── index.js
+│   │   │   │   └── LICENSE
+│   │   │   ├── index.js
+│   │   │   ├── lib
+│   │   │   │   ├── core.js
+│   │   │   │   ├── error.js
+│   │   │   │   └── plugins
+│   │   │   │       ├── json.js
+│   │   │   │       └── zip.js
+│   │   │   ├── LICENSE
+│   │   │   ├── normalize-path
+│   │   │   │   ├── index.js
+│   │   │   │   └── LICENSE
+│   │   │   ├── readdir-glob
+│   │   │   │   ├── index.js
+│   │   │   │   └── LICENSE
+│   │   │   └── zip-stream
+│   │   │       ├── index.js
+│   │   │       └── LICENSE
+│   │   ├── async
+│   │   │   ├── index.js
+│   │   │   └── LICENSE
+│   │   ├── bcryptjs
+│   │   │   ├── index.js
+│   │   │   └── LICENSE
+│   │   ├── busboy
+│   │   │   ├── index.js
+│   │   │   ├── LICENSE
+│   │   │   ├── types
+│   │   │   │   ├── multipart.js
+│   │   │   │   └── urlencoded.js
+│   │   │   └── utils.js
+│   │   ├── commandLineArgs
+│   │   │   └── index.js
+│   │   ├── dateAndTime
+│   │   │   ├── index.js
+│   │   │   └── LICENSE
+│   │   ├── expressFileupload
+│   │   │   ├── fileFactory.js
+│   │   │   ├── index.js
+│   │   │   ├── isEligibleRequest.js
+│   │   │   ├── LICENSE
+│   │   │   ├── memHandler.js
+│   │   │   ├── processMultipart.js
+│   │   │   ├── processNested.js
+│   │   │   ├── tempFileHandler.js
+│   │   │   ├── uploadtimer.js
+│   │   │   └── utilities.js
+│   │   ├── fastSort
+│   │   │   ├── index.js
+│   │   │   └── LICENSE
+│   │   ├── fluentFfmpeg
+│   │   │   ├── capabilities.js
+│   │   │   ├── ffprobe.js
+│   │   │   ├── index.d.ts
+│   │   │   ├── index.js
+│   │   │   ├── LICENSE
+│   │   │   ├── options
+│   │   │   │   ├── audio.js
+│   │   │   │   ├── custom.js
+│   │   │   │   ├── inputs.js
+│   │   │   │   ├── misc.js
+│   │   │   │   ├── output.js
+│   │   │   │   ├── video.js
+│   │   │   │   └── videosize.js
+│   │   │   ├── presets
+│   │   │   │   ├── divx.js
+│   │   │   │   ├── flashvideo.js
+│   │   │   │   └── podcast.js
+│   │   │   ├── processor.js
+│   │   │   ├── recipes.js
+│   │   │   └── utils.js
+│   │   ├── fsExtra
+│   │   │   ├── copy
+│   │   │   │   ├── copy.js
+│   │   │   │   ├── copy-sync.js
+│   │   │   │   └── index.js
+│   │   │   ├── empty
+│   │   │   │   └── index.js
+│   │   │   ├── ensure
+│   │   │   │   ├── file.js
+│   │   │   │   ├── index.js
+│   │   │   │   ├── link.js
+│   │   │   │   ├── symlink.js
+│   │   │   │   ├── symlink-paths.js
+│   │   │   │   └── symlink-type.js
+│   │   │   ├── fs
+│   │   │   │   └── index.js
+│   │   │   ├── index.js
+│   │   │   ├── LICENSE
+│   │   │   ├── mkdirs
+│   │   │   │   ├── index.js
+│   │   │   │   ├── make-dir.js
+│   │   │   │   └── utils.js
+│   │   │   ├── move
+│   │   │   │   ├── index.js
+│   │   │   │   ├── move.js
+│   │   │   │   └── move-sync.js
+│   │   │   ├── path-exists
+│   │   │   │   └── index.js
+│   │   │   ├── remove
+│   │   │   │   ├── index.js
+│   │   │   │   └── rimraf.js
+│   │   │   └── util
+│   │   │       ├── stat.js
+│   │   │       └── utimes.js
+│   │   ├── fusejs
+│   │   │   └── index.js
+│   │   ├── imageType
+│   │   │   ├── fileType.js
+│   │   │   ├── index.js
+│   │   │   └── LICENSE
+│   │   ├── isexe
+│   │   │   ├── index.js
+│   │   │   ├── LICENSE
+│   │   │   ├── mode.js
+│   │   │   └── windows.js
+│   │   ├── jsonwebtoken
+│   │   │   ├── decode.js
+│   │   │   ├── index.js
+│   │   │   ├── lib
+│   │   │   │   ├── JsonWebTokenError.js
+│   │   │   │   ├── NotBeforeError.js
+│   │   │   │   ├── timespan.js
+│   │   │   │   └── TokenExpiredError.js
+│   │   │   ├── LICENSE
+│   │   │   ├── sign.js
+│   │   │   └── verify.js
+│   │   ├── jwa
+│   │   │   ├── buffer-equal-constant-time
+│   │   │   │   ├── index.js
+│   │   │   │   └── LICENSE
+│   │   │   ├── ecdsa-sig-formatter
+│   │   │   │   ├── index.js
+│   │   │   │   ├── LICENSE
+│   │   │   │   └── param-bytes-for-alg.js
+│   │   │   ├── index.js
+│   │   │   └── LICENSE
+│   │   ├── jws
+│   │   │   ├── index.js
+│   │   │   ├── lib
+│   │   │   │   ├── data-stream.js
+│   │   │   │   ├── sign-stream.js
+│   │   │   │   ├── tostring.js
+│   │   │   │   └── verify-stream.js
+│   │   │   └── LICENSE
+│   │   ├── libarchive
+│   │   │   ├── archive.js
+│   │   │   ├── libarchiveWorker.js
+│   │   │   ├── LICENSE
+│   │   │   ├── wasm-libarchive.js
+│   │   │   └── wasm-module.js
+│   │   ├── lodash.once
+│   │   │   ├── index.js
+│   │   │   └── LICENSE
+│   │   ├── memorystore
+│   │   │   ├── index.js
+│   │   │   └── LICENSE
+│   │   ├── nodeCron
+│   │   │   ├── background-scheduled-task
+│   │   │   │   ├── daemon.js
+│   │   │   │   └── index.js
+│   │   │   ├── convert-expression
+│   │   │   │   ├── asterisk-to-range-conversion.js
+│   │   │   │   ├── index.js
+│   │   │   │   ├── month-names-conversion.js
+│   │   │   │   ├── range-conversion.js
+│   │   │   │   ├── step-values-conversion.js
+│   │   │   │   └── week-day-names-conversion.js
+│   │   │   ├── index.js
+│   │   │   ├── LICENSE
+│   │   │   ├── pattern-validation.js
+│   │   │   ├── scheduled-task.js
+│   │   │   ├── scheduler.js
+│   │   │   ├── storage.js
+│   │   │   ├── task.js
+│   │   │   └── time-matcher.js
+│   │   ├── nodeFfprobe
+│   │   │   ├── index.js
+│   │   │   └── LICENSE
+│   │   ├── nodeStreamZip
+│   │   │   ├── index.js
+│   │   │   └── LICENSE
+│   │   ├── passportLocal
+│   │   │   ├── index.js
+│   │   │   ├── LICENSE
+│   │   │   └── strategy.js
+│   │   ├── readChunk
+│   │   │   ├── index.js
+│   │   │   ├── LICENSE
+│   │   │   ├── pify.js
+│   │   │   └── withOpenFile.js
+│   │   ├── recursiveReaddirAsync
+│   │   │   ├── index.js
+│   │   │   └── LICENSE
+│   │   ├── requestIp
+│   │   │   ├── index.js
+│   │   │   ├── isJs.js
+│   │   │   └── LICENSE
+│   │   ├── rss
+│   │   │   ├── index.js
+│   │   │   └── LICENSE
+│   │   ├── sanitizeHtml
+│   │   │   ├── index.js
+│   │   │   └── LICENSE
+│   │   ├── streamsearch
+│   │   │   ├── index.js
+│   │   │   └── LICENSE
+│   │   ├── uaParser
+│   │   │   ├── index.js
+│   │   │   └── LICENSE
+│   │   ├── umzug
+│   │   │   ├── index.js
+│   │   │   ├── LICENSE
+│   │   │   ├── storage
+│   │   │   │   ├── contract.js
+│   │   │   │   ├── index.js
+│   │   │   │   ├── json.js
+│   │   │   │   ├── memory.js
+│   │   │   │   ├── mongodb.js
+│   │   │   │   └── sequelize.js
+│   │   │   ├── templates.js
+│   │   │   ├── types.js
+│   │   │   └── umzug.js
+│   │   ├── universalify
+│   │   │   ├── index.js
+│   │   │   └── LICENSE
+│   │   ├── watcher
+│   │   │   ├── aborter
+│   │   │   │   ├── controller.js
+│   │   │   │   └── signal.js
+│   │   │   ├── are-shallow-equal.js
+│   │   │   ├── atomically
+│   │   │   │   ├── consts.js
+│   │   │   │   ├── index.js
+│   │   │   │   └── utils
+│   │   │   │       ├── attemptify.js
+│   │   │   │       ├── fs_handlers.js
+│   │   │   │       ├── fs.js
+│   │   │   │       ├── lang.js
+│   │   │   │       ├── retryify.js
+│   │   │   │       ├── retryify_queue.js
+│   │   │   │       ├── scheduler.js
+│   │   │   │       └── temp.js
+│   │   │   ├── constants.js
+│   │   │   ├── debounce.js
+│   │   │   ├── enums.js
+│   │   │   ├── is-primitive.js
+│   │   │   ├── LICENSE
+│   │   │   ├── promise-concurrency-limiter.js
+│   │   │   ├── ripstat
+│   │   │   │   ├── consts.js
+│   │   │   │   ├── index.js
+│   │   │   │   └── stats.js
+│   │   │   ├── string-indexes.js
+│   │   │   ├── tiny-readdir.js
+│   │   │   ├── types.js
+│   │   │   ├── utils.js
+│   │   │   ├── watcher_handler.js
+│   │   │   ├── watcher.js
+│   │   │   ├── watcher_locker.js
+│   │   │   ├── watcher_locks_resolver.js
+│   │   │   ├── watcher_poller.js
+│   │   │   └── watcher_stats.js
+│   │   ├── which
+│   │   │   ├── index.js
+│   │   │   └── LICENSE
+│   │   └── xml
+│   │       ├── escapeForXML.js
+│   │       ├── index.js
+│   │       └── LICENSE
+│   ├── Logger.js
+│   ├── managers
+│   │   ├── AbMergeManager.js
+│   │   ├── ApiCacheManager.js
+│   │   ├── AudioMetadataManager.js
+│   │   ├── BackupManager.js
+│   │   ├── BinaryManager.js
+│   │   ├── CacheManager.js
+│   │   ├── CoverManager.js
+│   │   ├── CoverSearchManager.js
+│   │   ├── CronManager.js
+│   │   ├── EmailManager.js
+│   │   ├── LogManager.js
+│   │   ├── MigrationManager.js
+│   │   ├── NotificationManager.js
+│   │   ├── PlaybackSessionManager.js
+│   │   ├── PodcastManager.js
+│   │   ├── RssFeedManager.js
+│   │   ├── ShareManager.js
+│   │   └── TaskManager.js
+│   ├── migrations
+│   │   ├── changelog.md
+│   │   ├── readme.md
+│   │   ├── v2.15.0-series-column-unique.js
+│   │   ├── v2.15.1-reindex-nocase.js
+│   │   ├── v2.15.2-index-creation.js
+│   │   ├── v2.17.0-uuid-replacement.js
+│   │   ├── v2.17.3-fk-constraints.js
+│   │   ├── v2.17.4-use-subfolder-for-oidc-redirect-uris.js
+│   │   ├── v2.17.5-remove-host-from-feed-urls.js
+│   │   ├── v2.17.6-share-add-isdownloadable.js
+│   │   ├── v2.17.7-add-indices.js
+│   │   ├── v2.19.1-copy-title-to-library-items.js
+│   │   ├── v2.19.4-improve-podcast-queries.js
+│   │   ├── v2.20.0-improve-author-sort-queries.js
+│   │   └── v2.26.0-create-auth-tables.js
+│   ├── models
+│   │   ├── ApiKey.js
+│   │   ├── Author.js
+│   │   ├── BookAuthor.js
+│   │   ├── Book.js
+│   │   ├── BookSeries.js
+│   │   ├── CollectionBook.js
+│   │   ├── Collection.js
+│   │   ├── CustomMetadataProvider.js
+│   │   ├── Device.js
+│   │   ├── FeedEpisode.js
+│   │   ├── Feed.js
+│   │   ├── LibraryFolder.js
+│   │   ├── LibraryItem.js
+│   │   ├── Library.js
+│   │   ├── MediaItemShare.js
+│   │   ├── MediaProgress.js
+│   │   ├── PlaybackSession.js
+│   │   ├── Playlist.js
+│   │   ├── PlaylistMediaItem.js
+│   │   ├── PodcastEpisode.js
+│   │   ├── Podcast.js
+│   │   ├── Series.js
+│   │   ├── Session.js
+│   │   ├── Setting.js
+│   │   └── User.js
+│   ├── objects
+│   │   ├── Backup.js
+│   │   ├── DailyLog.js
+│   │   ├── DeviceInfo.js
+│   │   ├── files
+│   │   │   ├── AudioFile.js
+│   │   │   ├── AudioTrack.js
+│   │   │   ├── EBookFile.js
+│   │   │   └── LibraryFile.js
+│   │   ├── metadata
+│   │   │   ├── AudioMetaTags.js
+│   │   │   └── FileMetadata.js
+│   │   ├── Notification.js
+│   │   ├── PlaybackSession.js
+│   │   ├── PodcastEpisodeDownload.js
+│   │   ├── settings
+│   │   │   ├── EmailSettings.js
+│   │   │   ├── NotificationSettings.js
+│   │   │   └── ServerSettings.js
+│   │   ├── Stream.js
+│   │   ├── Task.js
+│   │   └── TrackProgressMonitor.js
+│   ├── providers
+│   │   ├── Audible.js
+│   │   ├── AudiobookCovers.js
+│   │   ├── Audnexus.js
+│   │   ├── CustomProviderAdapter.js
+│   │   ├── FantLab.js
+│   │   ├── GoogleBooks.js
+│   │   ├── iTunes.js
+│   │   ├── MusicBrainz.js
+│   │   └── OpenLibrary.js
+│   ├── routers
+│   │   ├── ApiRouter.js
+│   │   ├── HlsRouter.js
+│   │   └── PublicRouter.js
+│   ├── scanner
+│   │   ├── AbsMetadataFileScanner.js
+│   │   ├── AudioFileScanner.js
+│   │   ├── BookScanner.js
+│   │   ├── LibraryItemScanData.js
+│   │   ├── LibraryItemScanner.js
+│   │   ├── LibraryScan.js
+│   │   ├── LibraryScanner.js
+│   │   ├── MediaProbeData.js
+│   │   ├── NfoFileScanner.js
+│   │   ├── OpfFileScanner.js
+│   │   ├── PodcastScanner.js
+│   │   ├── ScanLogger.js
+│   │   └── Scanner.js
+│   ├── Server.js
+│   ├── SocketAuthority.js
+│   ├── utils
+│   │   ├── areEquivalent.js
+│   │   ├── comicBookExtractors.js
+│   │   ├── constants.js
+│   │   ├── ffmpegHelpers.js
+│   │   ├── fileUtils.js
+│   │   ├── generators
+│   │   │   ├── abmetadataGenerator.js
+│   │   │   ├── hlsPlaylistGenerator.js
+│   │   │   └── opmlGenerator.js
+│   │   ├── globals.js
+│   │   ├── htmlEntities.js
+│   │   ├── htmlSanitizer.js
+│   │   ├── index.js
+│   │   ├── libraryHelpers.js
+│   │   ├── longTimeout.js
+│   │   ├── migrations
+│   │   │   ├── absMetadataMigration.js
+│   │   │   ├── dbMigration.js
+│   │   │   └── oldDbFiles.js
+│   │   ├── notifications.js
+│   │   ├── parsers
+│   │   │   ├── parseComicInfoMetadata.js
+│   │   │   ├── parseComicMetadata.js
+│   │   │   ├── parseEbookMetadata.js
+│   │   │   ├── parseEpubMetadata.js
+│   │   │   ├── parseFullName.js
+│   │   │   ├── parseNameString.js
+│   │   │   ├── parseNfoMetadata.js
+│   │   │   ├── parseOpfMetadata.js
+│   │   │   ├── parseOPML.js
+│   │   │   ├── parseOverdriveMediaMarkers.js
+│   │   │   └── parseSeriesString.js
+│   │   ├── podcastUtils.js
+│   │   ├── prober.js
+│   │   ├── profiler.js
+│   │   ├── queries
+│   │   │   ├── adminStats.js
+│   │   │   ├── authorFilters.js
+│   │   │   ├── libraryFilters.js
+│   │   │   ├── libraryItemFilters.js
+│   │   │   ├── libraryItemsBookFilters.js
+│   │   │   ├── libraryItemsPodcastFilters.js
+│   │   │   ├── seriesFilters.js
+│   │   │   └── userStats.js
+│   │   ├── rateLimiterFactory.js
+│   │   ├── scandir.js
+│   │   ├── stringifySequelizeQuery.js
+│   │   └── zipHelpers.js
+│   └── Watcher.js
+├── structure.txt
+├── tailwind.config.js
+└── test
+    └── server
+        ├── controllers
+        │   └── LibraryItemController.test.js
+        ├── finders
+        │   └── BookFinder.test.js
+        ├── Logger.test.js
+        ├── managers
+        │   ├── ApiCacheManager.test.js
+        │   ├── BinaryManager.test.js
+        │   ├── MigrationManager.test.js
+        │   └── migrations
+        │       ├── v1.0.0-migration.js
+        │       ├── v1.10.0-migration.js
+        │       ├── v1.1.0-migration.js
+        │       └── v1.2.0-migration.js
+        ├── migrations
+        │   ├── v0.0.1-migration_example.js
+        │   ├── v0.0.1-migration_example.test.js
+        │   ├── v2.15.0-series-column-unique.test.js
+        │   ├── v2.17.3-fk-constraints.test.js
+        │   ├── v2.17.4-use-subfolder-for-oidc-redirect-uris.test.js
+        │   ├── v2.17.5-remove-host-from-feed-urls.test.js
+        │   ├── v2.17.6-share-add-isdownloadable.test.js
+        │   ├── v2.19.1-copy-title-to-library-items.test.js
+        │   ├── v2.19.4-improve-podcast-queries.test.js
+        │   └── v2.20.0-improve-author-sort-queries.test.js
+        ├── objects
+        │   └── TrackProgressMonitor.test.js
+        ├── providers
+        │   └── Audible.test.js
+        └── utils
+            ├── ffmpegHelpers.test.js
+            ├── fileUtils.test.js
+            ├── parsers
+            │   ├── parseNameString.test.js
+            │   ├── parseNfoMetadata.test.js
+            │   └── parseOpfMetadata.test.js
+            ├── scandir.test.js
+            └── stringifySequeslizeQuery.test.js
+
+240 directories, 903 files

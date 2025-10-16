@@ -56,7 +56,7 @@ export default class PlayerHandler {
     this.ctx.$store.commit('setPlaybackSessionId', sessionId)
   }
 
-  load(libraryItem, episodeId, playWhenReady, playbackRate, startTimeOverride = undefined) {
+  load({libraryItem, episodeId, playWhenReady, playbackRate, startTimeOverride = undefined, segments = null}) {
     this.libraryItem = libraryItem
 
     this.episodeId = episodeId
@@ -64,6 +64,8 @@ export default class PlayerHandler {
     this.initialPlaybackRate = playbackRate
 
     this.startTimeOverride = startTimeOverride == null || isNaN(startTimeOverride) ? undefined : Number(startTimeOverride)
+
+    console.log('[PlayerHandler] Load', libraryItem, segments)
 
     if (!this.player) this.switchPlayer(playWhenReady)
     else this.prepare()

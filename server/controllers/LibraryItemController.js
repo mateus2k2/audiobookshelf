@@ -1193,5 +1193,49 @@ class LibraryItemController {
 
     next()
   }
+
+  /**
+   * GET: /api/items/:id/segments
+   *
+   * Sends the episode and podcast data to another backend to fetch segment information.
+   *
+   * @param {LibraryItemControllerRequest} req 
+   * @param {Response} res
+   */
+  async getSegments(req, res) {
+    try {
+      const libraryItem = req.libraryItem
+
+      if (!libraryItem.isPodcast) {
+        return res.status(400).json({ error: 'Segments are only available for podcast episodes.' })
+      }
+
+      // Build the payload you want to send to the external backend
+      const payload = {
+        itemId: libraryItem.id,
+        libraryId: libraryItem.libraryId,
+        podcastId: libraryItem.media.id,
+        podcast: {
+          title: libraryItem.media.title,
+          author: libraryItem.media.author
+        }
+      }
+
+      // const backendUrl = process.env.SEGMENT_BACKEND_URL || 'http://localhost:8000/api/segments'
+      // const { data } = await axios.post(backendUrl, payload)
+      const data = {
+        segments: [
+          { start: 0, end: 60000, title: 'Introduction' },
+          { start: 60000, end: 300000, title: 'Main Topic' },
+          { start: 300000, end: 600000, title: 'Conclusion' }
+        ]
+      }
+
+      return res.json(data)
+    } catch (err) {
+      Logger.error(`[LibraryItemController] Failed to fetch segments`, err)
+      return res.status(500).json({ error: 'Failed to fetch segments', details: err.message })
+    }
+  }
 }
 module.exports = new LibraryItemController()
